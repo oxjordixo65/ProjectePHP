@@ -1,0 +1,27 @@
+/***************** TAG SELECTORS *****************/
+
+body, html {
+    margin: 0;
+}
+
+/***************** CLASS SELECTORS *****************/
+
+.producte {
+    border: solid 1px black;
+    margin: 0.3125rem;
+}
+
+.producte * {
+    display: inline;
+    margin: auto 0.3125rem;
+    position: relative;
+}
+
+.producte p {
+    border: solid 1px blueviolet;
+    margin: 5px;
+    padding: 0.9375rem;
+}
+
+/***************** IDENTIFIER SELECTORS *****************/
+

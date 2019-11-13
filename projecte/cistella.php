@@ -23,6 +23,7 @@
         }
     ?>
     <button>Fer pagament</button>
+    <button>Descarrega PDF de la comanda</button>
 </body>
 
 </html>
