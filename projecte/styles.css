@@ -1,0 +1,55 @@
+/***************** TAG SELECTORS *****************/
+
+body, html {
+    margin: 0;
+}
+
+/***************** CLASS SELECTORS *****************/
+
+.cistella {
+    background: pink;
+    border: solid 1px red; 
+    padding: 0.3125rem 0.9375rem;
+    position: fixed;
+    right: 0.3125rem;
+    text-align: center;  
+    top: 0.3125rem;
+    width: 3.125rem;
+}
+
+.cistella:hover {
+    background: rebeccapurple;
+}
+
+.cistella:active {
+    background: blue;
+}
+
+.producte {
+    border: solid 1px black;
+    margin: 0.3125rem;
+}
+
+.producte * {
+    display: inline;
+    margin: auto 0.3125rem;
+    position: relative;
+}
+
+.producte p {
+    border: solid 1px blueviolet;
+    margin: 5px;
+    padding: 0.9375rem;
+}
+
+/***************** IDENTIFIER SELECTORS *****************/
+
+#bt-actualitza-cistella {
+    margin: 0.3125rem 0.3125rem 0 0.3125rem;
+    position: fixed;
+    right: 5rem;
+}
+
+#link-cistella  {
+    color: black;
+}
