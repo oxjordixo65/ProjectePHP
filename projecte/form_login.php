@@ -23,9 +23,18 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <a href="http://localhost/projecte/form_signup.php"><button id="signup">Sign Up</button></a>
-        <a href="http://localhost/projecte/form_login.php"><button id="login">Login</button></a>
-    
+    <header>
+        <h1>Login<h1>
+    </header>
+    <form action="http://localhost/projecte/login.php" method="POST">
+        Username:<br>
+        <input type="text" name="usernameLogin" value="">
+        <br>
+        Password:<br>
+        <input type="password" name="passwLog" value="">
+        <br><br>
+        <input type="submit" value="Comprobar">
+    </form>
     
     <script src="" async defer></script>
 </body>
