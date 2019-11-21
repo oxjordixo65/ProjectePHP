@@ -6,17 +6,18 @@ if (isset($_SESSION)) {
     if (!isset($_SESSION["quantitat-productes"])) {
         $_SESSION["quantitat-productes"] = 0; # AIXÒ S'HA DE FER QUAN S'INICII LA SESSIÓ! (login)
     } else {
+
         for ($i = 1; $i <= 10; $i++) {
             # Guarda els concerts i la quantitat de tickets que ha escollit l'usuari
             # a $_SESSION.
-            if ($_POST["chb-concert-" . $i] == "on") {
+            if (isset($_POST["chb-concert-" . $i]) && $_POST["chb-concert-" . $i] == "on") {
                 if ($_POST["qt-concert-" . $i] != 0) {
                     # Si ja existeix una quantitat de tickets d'aquest concert, i 
                     # si el valor no ha canviat, no s'han de sumar més.
                     if (isset($_SESSION["concert-" . $i])) {
                         if ($_SESSION["concert-" . $i] != $_POST["qt-concert-" . $i]) {
                             $_SESSION["quantitat-productes"] -= $_SESSION["concert-" . $i];
-                            $_SESSION["concert-" . $i] = $_POST["qt-concert-" . $i]; 
+                            $_SESSION["concert-" . $i] = $_POST["qt-concert-" . $i];
                             $_SESSION["quantitat-productes"] += $_POST["qt-concert-" . $i];
                         }
                     } else {
