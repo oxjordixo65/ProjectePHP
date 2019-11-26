@@ -38,7 +38,7 @@ session_start();
             # Si la sessió conté tickets marcats a la cistella, es marquen a la pàgina també
             if (isset($_SESSION["concert-" . $i])) {
                 echo ('<div class="producte">');
-                echo ('<p> Descripció </p> <img src="./img/mono.jpg"><input type="number" name="qt-concert-' . $i . '" value="' . $_SESSION["concert-" . $i] . '"><br>');
+                echo ('<p> Descripció </p> <img src="./img/concert-' . $i . '.jpg"><input type="number" name="qt-concert-' . $i . '" value="' . $_SESSION["concert-" . $i] . '"><br>');
                 echo ('</div>');
             }
         }

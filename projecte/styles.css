@@ -1,55 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 /***************** TAG SELECTORS *****************/
 
 body, html {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
+}
+
+input[type="textbox"] {
+    border-radius: 20px;
+}
+
+input[type="number"] {
+    width: 35px;
 }
 
 /***************** CLASS SELECTORS *****************/
 
 .cistella {
-    background: pink;
-    border: solid 1px red; 
-    padding: 0.3125rem 0.9375rem;
+    border-radius: 100%;
+    padding: 15px 15px;
     position: fixed;
     right: 0.3125rem;
-    text-align: center;  
+    text-align: center;
     top: 0.3125rem;
-    width: 3.125rem;
+    transition: background 0.25s;
+    width: 45px;
+    height: 45px;
 }
 
 .cistella:hover {
-    background: rebeccapurple;
+    background: rgb(179, 179, 179);
 }
 
 .cistella:active {
-    background: blue;
+    background: rgb(218, 218, 132);
+}
+
+.productes {
+    width: 70%;
+    margin-left: 25px;
+    margin-right: auto;
+    padding: 70px 0;
 }
 
 .producte {
-    border: solid 1px black;
     margin: 0.3125rem;
+    transition: box-shadow 0.25s;
+    padding: 50px 0;
+    min-height: 300px;
+    min-width: 600px;
+}
+
+.producte:hover {
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .producte * {
-    display: inline;
-    margin: auto 0.3125rem;
+    display: block;
+    margin: 10px 5px;
     position: relative;
 }
 
 .producte p {
-    border: solid 1px blueviolet;
     margin: 5px;
     padding: 0.9375rem;
+}
+
+.producte img {
+    float: left;
+    height: 300px;
+    margin-right: 15px;
+    width: 600px;
+}
+
+.concert-titol {
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 /***************** IDENTIFIER SELECTORS *****************/
 
 #bt-actualitza-cistella {
-    margin: 0.3125rem 0.3125rem 0 0.3125rem;
+    margin: 15px 6.6px 6.6px 6.6px;
     position: fixed;
     right: 5rem;
+    background: #F6F6F6;
+    border: 1px transparent solid;
+    border-radius: 10px;
+    color: rgb(139,141,144);
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 15px;
 }
 
-#link-cistella  {
+#bt-actualitza-cistella:hover {
+    border: 1px solid rgb(139,141,144);
+    color: black;
+}
+
+#bt-actualitza-cistella:active {
+    border: 1px solid black;    
+}
+
+#img-shopping-cart {
+    display: block;
+}
+
+#link-cistella {
     color: black;
 }
