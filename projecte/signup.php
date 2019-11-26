@@ -5,3 +5,4 @@
     $usuari->registrar();
     
 ?>
+

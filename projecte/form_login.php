@@ -16,7 +16,8 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css" type="text/css">
 </head>
 
 <body>
@@ -24,19 +25,25 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <header>
-        <h1>Login<h1>
+        <img class="center margenArriba" src="img/icon.png" alt="iconImg" width="80" height="80">
+        <h1 class="text-center">Login<h1>
+
     </header>
-    <form action="http://localhost/projecte/login.php" method="POST">
-        Username:<br>
-        <input type="text" name="usernameLogin" value="">
-        <br>
-        Password:<br>
-        <input type="password" name="passwLog" value="">
-        <br><br>
-        <input type="submit" value="Comprobar">
+    <form class="text-center" action="http://localhost/projecte/login.php" method="POST">
+
+        <div class="form-group centrado">
+            <label class="alinearIz" for="username" >Username</label><br>
+            <input type="text" name="usernameLogin" value="">
+            <br>
+            <label class="alinearIz" for="passwLog" >Password</label><br>
+            <input type="password" name="passwLog" value="">
+            <br><br>
+            <input class="btn btn-primary btnGrande" type="submit" value="Comprobar">
+        </div>
+
     </form>
-    
-    <script src="" async defer></script>
+
+
 </body>
 
 </html>

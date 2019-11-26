@@ -1,8 +1,8 @@
 <?php
-//require "fpdf.php";
+    require "fpdf.php";
 
-session_start();
-/*
+    session_start();
+
     function printPDF($tipus,$dim,$volum,$forma){
         $cadena="Productes:\n\n";
 
@@ -21,7 +21,6 @@ session_start();
         $pdf->Output(self::DIR_PRINT."/".$forma.".pdf","F");
         return 0;
     }	
-    */
 ?>
 <!DOCTYPE html>
 
@@ -33,16 +32,16 @@ session_start();
 
 <body>
     <?php
-    if (isset($_SESSION)) {
-        for ($i = 1; $i <= 10; $i++) {
-            # Si la sessió conté tickets marcats a la cistella, es marquen a la pàgina també
-            if (isset($_SESSION["concert-" . $i])) {
+        if (isset($_SESSION)) {
+            for ($i = 1; $i <= 10; $i++) {
                 echo ('<div class="producte">');
-                echo ('<p> Descripció </p> <img src="./img/concert-' . $i . '.jpg"><input type="number" name="qt-concert-' . $i . '" value="' . $_SESSION["concert-" . $i] . '"><br>');
+                # Si la sessió conté tickets marcats a la cistella, es marquen a la pàgina també
+                if (isset($_SESSION["concert-" . $i])) {
+                    echo ('<p> Descripció </p> <img src="./img/mono.jpg"><input type="number" name="qt-concert-' . $i . '" value="' . $_SESSION["concert-" . $i] . '"><br>');
+                }
                 echo ('</div>');
             }
         }
-    }
     ?>
     <button>Fer pagament</button>
     <button>Descarrega PDF de la comanda</button>

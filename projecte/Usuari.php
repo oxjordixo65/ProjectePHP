@@ -39,6 +39,8 @@ class Usuari
     {
         return "Usuari amb username: " . $this->username . "y password:" . $this->password . "\n";
     }
+
+    //registrar user
     public function registrar()
     {
 

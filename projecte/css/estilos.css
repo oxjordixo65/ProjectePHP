@@ -1,0 +1,57 @@
+.margenArriba {
+    margin-top: 8%;
+}
+
+label {
+    margin-top: 1.5em;
+    font-weight: bold;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    width: 7%;
+}
+
+.alinearIz {
+    margin-right: 6.8%;
+}
+
+.centrado {
+    border: 1px solid black;
+    border-radius: 25px;
+    margin-right: 35%;
+    margin-left: 35%;
+    background-color: white;
+    height: 18em;
+}
+
+.btnGrande {
+    width: 40%;
+}
+
+.white {
+    color: white;
+}
+
+img {
+    background: transparent;
+}
+
+#foto {
+    width: 50%;
+}
+
+#conciertoImg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(248, 248, 241);
+}
