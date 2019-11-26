@@ -70,9 +70,9 @@ if (isset($_SESSION)) {
                 $concertTitol = explode("\t", $concertInfo)[0];
                 $concertPreu = explode("\t", $concertInfo)[1];
                 echo ('<div class="producte">');
-                echo('<img src="./img/concert-' . $i . '.jpg">');
-                echo('<span class="concert-titol">'.$concertTitol.'</span>');
-                echo('<span class="concert-preu">'.$concertPreu.'€</span>');
+                echo ('<img src="./img/concert-' . $i . '.jpg">');
+                echo ('<span class="concert-titol">' . $concertTitol . '</span>');
+                echo ('<span class="concert-preu">' . $concertPreu . '€</span>');
 
                 # Si la sessió conté tickets marcats a la cistella, es marquen a la pàgina també
                 if (isset($_SESSION["concert-" . $i])) {
