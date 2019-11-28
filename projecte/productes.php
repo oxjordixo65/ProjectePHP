@@ -46,9 +46,11 @@ if (isset($_SESSION)) {
     <meta charset="utf-8">
     <title>Productes</title>
     <link rel="stylesheet" href="./css/styles.css">
+    
 </head>
 
 <body>
+    
     <form action="./productes.php" method="post">
         <input id="bt-actualitza-cistella" type="submit" value="Actualitzar cistella"><br><br><br><br><br>
         <a id="link-cistella" href="./cistella.php">
@@ -95,6 +97,7 @@ if (isset($_SESSION)) {
             ?>
         </div>
     </form>
+    
 </body>
 
 </html>

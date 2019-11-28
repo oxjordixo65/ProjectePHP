@@ -16,9 +16,9 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/estilos.css" type="text/css">
+    <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -32,36 +32,42 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="./llistaUsers.php">Llista Users</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        Assignatures
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">PHP</a>
+                        <a class="dropdown-item" href="#">Git</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">C++</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Nosaltres</a>
                 </li>
             </ul>
-            <div class="form-inline my-2 my-lg-0">
-                <a href="http://localhost/projecte/form_signup.php"><button class="btn btn-dark" id="signup">Sign Up</button></a>
+            <form class="form-inline">
+
+                <a href="http://localhost/projecte/form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a>
                 &nbsp;&nbsp;
-                <a href="http://localhost/projecte/form_login.php"><button class="btn btn-dark" id="login">Login</button></a>
-            </div>
+                <a href="http://localhost/projecte/form_login.php" class="btn btn-dark" role="button">Login</button></a>
+            </form>
+
 
         </div>
     </nav>
+
+
+
+
 
     <!--
     <img id="conciertoImg" src="img/background.jpg">-->
@@ -77,14 +83,28 @@
                 <img class="d-block w-100" src="./img/background.jpg" alt="First slide">
                 <div class="carousel-caption">
                     <h5>Image 1</h5>
-                    <p>ALGOO1</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum ullamcorper magnis, metus varius blandit scelerisque suspendisse platea a leo morbi maecenas ac, tellus torquent erat mus vitae phasellus vivamus montes dapibus. Sociis iaculis cubilia magna placerat duis nulla proin sagittis convallis facilisi feugiat aenean, interdum habitasse tristique maecenas fermentum erat hendrerit vivamus massa eros turpis nec metus, himenaeos nibh malesuada luctus dui phasellus dictum ad in orci mollis. Fermentum curae porta condimentum tempus sem nisi inceptos eu primis, malesuada scelerisque pellentesque platea nibh turpis convallis hendrerit, habitant libero laoreet parturient at sagittis vel diam.
+
+                        Tellus integer quis ullamcorper urna proin risus, malesuada consequat vestibulum dui potenti, massa mus nibh turpis pharetra. Lobortis id interdum bibendum nec elementum arcu, nullam suscipit donec imperdiet aptent, dui duis cubilia libero laoreet. Magna at pellentesque eget feugiat scelerisque cras, consequat eleifend maecenas non porta cubilia suspendisse, litora euismod ante nec fusce.</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="./img/background2.jpg" alt="Second slide">
+                <div class="carousel-caption">
+                    <h5>Image 2</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum ullamcorper magnis, metus varius blandit scelerisque suspendisse platea a leo morbi maecenas ac, tellus torquent erat mus vitae phasellus vivamus montes dapibus. Sociis iaculis cubilia magna placerat duis nulla proin sagittis convallis facilisi feugiat aenean, interdum habitasse tristique maecenas fermentum erat hendrerit vivamus massa eros turpis nec metus, himenaeos nibh malesuada luctus dui phasellus dictum ad in orci mollis. Fermentum curae porta condimentum tempus sem nisi inceptos eu primis, malesuada scelerisque pellentesque platea nibh turpis convallis hendrerit, habitant libero laoreet parturient at sagittis vel diam.
+
+                        Tellus integer quis ullamcorper urna proin risus, malesuada consequat vestibulum dui potenti, massa mus nibh turpis pharetra. Lobortis id interdum bibendum nec elementum arcu, nullam suscipit donec imperdiet aptent, dui duis cubilia libero laoreet. Magna at pellentesque eget feugiat scelerisque cras, consequat eleifend maecenas non porta cubilia suspendisse, litora euismod ante nec fusce.</p>
+                </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="./img/background3.jpg" alt="Third slide">
+                <div class="carousel-caption">
+                    <h5>Image 3</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum ullamcorper magnis, metus varius blandit scelerisque suspendisse platea a leo morbi maecenas ac, tellus torquent erat mus vitae phasellus vivamus montes dapibus. Sociis iaculis cubilia magna placerat duis nulla proin sagittis convallis facilisi feugiat aenean, interdum habitasse tristique maecenas fermentum erat hendrerit vivamus massa eros turpis nec metus, himenaeos nibh malesuada luctus dui phasellus dictum ad in orci mollis. Fermentum curae porta condimentum tempus sem nisi inceptos eu primis, malesuada scelerisque pellentesque platea nibh turpis convallis hendrerit, habitant libero laoreet parturient at sagittis vel diam.
+
+                        Tellus integer quis ullamcorper urna proin risus, malesuada consequat vestibulum dui potenti, massa mus nibh turpis pharetra. Lobortis id interdum bibendum nec elementum arcu, nullam suscipit donec imperdiet aptent, dui duis cubilia libero laoreet. Magna at pellentesque eget feugiat scelerisque cras, consequat eleifend maecenas non porta cubilia suspendisse, litora euismod ante nec fusce.</p>
+                </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

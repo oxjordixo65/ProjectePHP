@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -21,9 +17,6 @@
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"><img src="img/icon.png" alt="iconImg" width="65" height="60"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +24,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -55,8 +48,7 @@
             </ul>
             <form class="form-inline">
 
-                <a href="http://localhost/projecte/form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a>
-                &nbsp;&nbsp;
+                <a href="http://localhost/projecte/form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a> &nbsp;&nbsp;
                 <a href="http://localhost/projecte/form_login.php" class="btn btn-dark" role="button">Login</button></a>
             </form>
 
@@ -64,28 +56,16 @@
         </div>
     </nav>
 
-    <header>
-        <img class="center margenArriba" src="img/icon.png" alt="iconImg" width="80" height="80">
-        <h1 class="text-center">Sign Up</h1>
-    </header>
-    <form class="text-center" action="http://localhost/projecte/signup.php" method="POST">
-        <div class="form-group centrado">
+    <?php
 
-            <label for="username">Username</label><br>
-            <input type="text" name="username" value="">
-            <br>
-            <label for="passw">Password</label><br>
-            <input type="password" name="passw" value="">
-            <br><br>
-            <input class="btn btn-primary" type="submit" value="Crear">
-        </div>
-    </form>
-
-
-
-
-
-
+    require("Usuari.php");
+    
+    $var=Usuari::mostrarUsers();
+    
+    ?>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 
