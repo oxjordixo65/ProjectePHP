@@ -45,7 +45,7 @@ if (isset($_SESSION)) {
 <head>
     <meta charset="utf-8">
     <title>Productes</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
