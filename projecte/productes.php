@@ -6,7 +6,6 @@ if (isset($_SESSION)) {
     if (!isset($_SESSION["quantitat-productes"])) {
         $_SESSION["quantitat-productes"] = 0; # AIXÒ S'HA DE FER QUAN S'INICII LA SESSIÓ! (login)
     } else {
-        echo("concert 1: ".$_SESSION["concert-" . 1]);
         for ($i = 1; $i <= 10; $i++) {
             # Guarda els concerts i la quantitat de tickets que ha escollit l'usuari
             # a $_SESSION.
@@ -29,11 +28,12 @@ if (isset($_SESSION)) {
                         $_SESSION["quantitat-productes"] += $_POST["qt-concert-" . $i];
                     }
                 }
-            } else {
+            } else if (!isset($_POST["chb-concert-" . $i]) && !isset($_GET['return'])) { // && $_POST["chb-concert-" . $i] != "on"
                 # Si no està marcat i existeix en la SESSIO, esborrar i eliminar la quantitat de la cistella
                 if (isset($_SESSION["concert-" . $i])) {
                     $_SESSION["quantitat-productes"] -= $_SESSION["concert-" . $i];
-                    $_SESSION["concert-" . $i] = 0;
+                    //$_SESSION["concert-" . $i] = 0;
+                    unset($_SESSION["concert-" . $i]);
                 }
             }
         }

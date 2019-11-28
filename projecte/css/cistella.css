@@ -74,6 +74,13 @@ hr {
     font-size: 1.2em;
 }
 
+.total-pagament {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 10px;
+    text-align: right;
+}
+
 /***************** IDENTIFIER SELECTORS *****************/
 
 #botons {
