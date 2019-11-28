@@ -2,7 +2,7 @@
     require "fpdf.php";
 
     session_start();
-
+    
     function printPDF(){
         $avui = date("F j, Y, g:i a");
         $numFactura = rand(10000, 99999);
@@ -31,6 +31,7 @@
                 $pdf->Cell('','',$concertTitol);
                 $pdf->SetFont('Arial', '', 10);
                 $pdf->Cell('','',$concertPreu, 0, 0, '');
+                $pdf->Ln();
             }
         }
 
