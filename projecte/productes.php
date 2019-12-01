@@ -3,6 +3,14 @@
 # Si se actualiza una cantidad de un producto que ya se había sumado, no se suma a la cantidad que ya se tiene
 session_start();
 if (isset($_SESSION)) {
+
+    // Comprova que s'ha iniciat la sessió abans de carregar la pàgina.
+    // Si no s'ha iniciat, es redirigeix l'usuari a una altra
+    // on s'indica que s'ha d'iniciar sessió.
+    if (!isset($_SESSION["usuari"])) {
+        header("Location: falla_auth.php");
+    }
+
     if (!isset($_SESSION["quantitat-productes"])) {
         $_SESSION["quantitat-productes"] = 0; # AIXÒ S'HA DE FER QUAN S'INICII LA SESSIÓ! (login)
     } else {
@@ -28,11 +36,10 @@ if (isset($_SESSION)) {
                         $_SESSION["quantitat-productes"] += $_POST["qt-concert-" . $i];
                     }
                 }
-            } else if (!isset($_POST["chb-concert-" . $i]) && !isset($_GET['return'])) { // && $_POST["chb-concert-" . $i] != "on"
+            } else if (!isset($_POST["chb-concert-" . $i]) && !isset($_GET['return'])) {
                 # Si no està marcat i existeix en la SESSIO, esborrar i eliminar la quantitat de la cistella
                 if (isset($_SESSION["concert-" . $i])) {
                     $_SESSION["quantitat-productes"] -= $_SESSION["concert-" . $i];
-                    //$_SESSION["concert-" . $i] = 0;
                     unset($_SESSION["concert-" . $i]);
                 }
             }
@@ -46,13 +53,13 @@ if (isset($_SESSION)) {
     <meta charset="utf-8">
     <title>Productes</title>
     <link rel="stylesheet" href="./css/styles.css">
-    
 </head>
 
 <body>
-    
+
     <form action="./productes.php" method="post">
-        <input id="bt-actualitza-cistella" type="submit" value="Actualitzar cistella"><br><br><br><br><br>
+        <a href="./index.php" id="bt-logout" class="button">Logout</a>
+        <input id="bt-actualitza-cistella" class="button" type="submit" value="Actualitzar cistella"><br><br><br><br><br>
         <a id="link-cistella" href="./cistella.php">
             <div class="cistella">
                 <img src="img/shopping-cart.png" id="img-shopping-cart">
@@ -97,7 +104,7 @@ if (isset($_SESSION)) {
             ?>
         </div>
     </form>
-    
+
 </body>
 
 </html>

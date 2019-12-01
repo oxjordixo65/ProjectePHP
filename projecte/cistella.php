@@ -3,11 +3,19 @@ require "fpdf.php";
 
 session_start();
 
-function printPDF()
+// Comprova que s'ha iniciat la sessió abans de carregar la pàgina.
+// Si no s'ha iniciat, es redirigeix l'usuari a una altra
+// on s'indica que s'ha d'iniciar sessió.
+if (!isset($_SESSION["usuari"])) {
+    header("Location: falla_auth.php");
+}
+
+$numFactura = rand(10000, 99999);
+$arxiuConcerts = fopen("./concerts/concerts.txt", "r") or die("No s'ha pogut llegir l'arxiu d'informació!");
+
+function printPDF($numFactura, $arxiuConcerts)
 {
     $avui = date("F j, Y, g:i a");
-    $numFactura = rand(10000, 99999);
-    $arxiuConcerts = fopen("./concerts/concerts.txt", "r") or die("No s'ha pogut llegir l'arxiu d'informació!");
 
     $pdf = new FPDF();
     $pdf->AddPage();
@@ -45,8 +53,44 @@ function printPDF()
     return 0;
 }
 
+function printDoc($numFactura, $arxiuConcerts)
+{
+    // Equival a fer el pagament de la comanda.
+    // Genera un document de text al costat del servidor, a la carpeta principal de la pàgina,
+    // i elimina les variables de sessió dels productes.
+
+    $avui = date("Ymd");
+    $arxiu = fopen('./' . $avui . ".txt", 'a+') or die("No s'ha pogut crear/llegir l'arxiu $avui.txt!");
+
+    fwrite($arxiu, "Factura #" . $numFactura . "\n\n");
+    $totalPagament = 0;
+    for ($i = 1; $i <= 10; $i++) {
+        $concertInfo = fgets($arxiuConcerts);
+        $concertTitol = explode("\t", $concertInfo)[0];
+        $concertPreu = explode("\t", $concertInfo)[1];
+        if (isset($_SESSION["concert-" . $i])) {
+            $totalPagament += (int) $concertPreu * (int) $_SESSION["concert-" . $i];
+            fwrite($arxiu, $concertTitol . "\t");
+            fwrite($arxiu, $_SESSION["concert-" . $i] . " x " . $concertPreu . " eur\n");
+            // elimina 
+            unset($_SESSION["concert-" . $i]);
+        }
+    }
+
+    fwrite($arxiu, "\nTotal a pagar: " . $totalPagament . "\n");
+    fwrite($arxiu, "----------------------------------------\n");
+
+    $_SESSION["quantitat-productes"] = 0;    
+}
+
 if (isset($_GET['pdf'])) {
-    printPDF();
+    printPDF($numFactura, $arxiuConcerts);
+}
+
+if (isset($_GET['doc'])) {
+    printDoc($numFactura, $arxiuConcerts);    
+    sleep(3);
+    header("Location: productes.php");
 }
 
 ?>
@@ -60,6 +104,10 @@ if (isset($_GET['pdf'])) {
 
 <body>
     <?php
+    if (isset($_GET["doc"])){
+        echo "<p>S'ha completat la comanda i generat un document d'informació. <br> En 3 segons seràs redirigit a la pàgina de productes. Gràcies!</p>";
+    }
+
     if (isset($_SESSION)) {
         $arxiuConcerts = fopen("./concerts/concerts.txt", "r") or die("No s'ha pogut llegir l'arxiu d'informació!");
         $totalPagament = 0;
@@ -88,8 +136,9 @@ if (isset($_GET['pdf'])) {
     ?>
     <div id="botons">
         <a href="./productes.php?return=true"><button>Tornar als productes</button></a>
-        <button>Fer pagament</button>
+        <a href="./cistella.php?doc=true"><button>Fer pagament</button></a>
         <a href='./cistella.php?pdf=true'><button>Descarrega PDF de la comanda</button></a>
+
     </div>
 </body>
 

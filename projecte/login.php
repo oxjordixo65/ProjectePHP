@@ -1,3 +1,7 @@
+<?php
+ session_start();   
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -49,9 +53,9 @@
             </ul>
             <form class="form-inline">
 
-                <a href="http://localhost/projecte/form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a>
+                <a href="./form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a>
                 &nbsp;&nbsp;
-                <a href="http://localhost/projecte/form_login.php" class="btn btn-dark" role="button">Login</button></a>
+                <a href="./form_login.php" class="btn btn-dark" role="button">Login</button></a>
             </form>
 
 
@@ -65,6 +69,10 @@
     $var = Usuari::comprobarLogin($_POST["usernameLogin"], $_POST["passwLog"]);
 
     if ($var == 0) {
+        // es crea un random ID per l'usuari
+        if (!isset($_SESSION["usuari"])) {
+            $_SESSION["usuari"] = rand(11111111111111, 99999999999999);
+        }
         header("Location: productes.php");
     } else if ($var == 1) {
 

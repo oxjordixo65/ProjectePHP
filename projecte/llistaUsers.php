@@ -48,8 +48,8 @@
             </ul>
             <form class="form-inline">
 
-                <a href="http://localhost/projecte/form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a> &nbsp;&nbsp;
-                <a href="http://localhost/projecte/form_login.php" class="btn btn-dark" role="button">Login</button></a>
+                <a href="./form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a> &nbsp;&nbsp;
+                <a href="./form_login.php" class="btn btn-dark" role="button">Login</button></a>
             </form>
 
 

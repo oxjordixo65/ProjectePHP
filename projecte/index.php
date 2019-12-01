@@ -1,5 +1,17 @@
 <?php
 
+session_start();
+setcookie(session_id(), '', time() + 31556952); // Caduca en un any
+
+// quan es torna a l'index des de la pàgina de productes, com que la sessió
+// havia començat i s'havia assignat un ID, isset($_SESSION) retornarà true. 
+// Per tant, entrarà aquí i eliminarà la sessió.
+if (isset($_SESSION["usuari"])) {
+    session_unset(); //Esborrant totes les dades de la sessió    
+    setcookie(session_id(), '', time() - 42000); // Destrucció cookie de sessió
+    session_destroy(); //Destrucció de la sessió actual
+    echo "S'ha tancat la sessió.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +30,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -32,7 +43,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -56,9 +67,9 @@
             </ul>
             <form class="form-inline">
 
-                <a href="http://localhost/projecte/form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a>
+                <a href="./form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a>
                 &nbsp;&nbsp;
-                <a href="http://localhost/projecte/form_login.php" class="btn btn-dark" role="button">Login</button></a>
+                <a href="./form_login.php" class="btn btn-dark" role="button">Login</button></a>
             </form>
 
 
