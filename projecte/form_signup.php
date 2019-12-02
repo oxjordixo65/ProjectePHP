@@ -55,9 +55,9 @@
             </ul>
             <form class="form-inline">
 
-                <a href="http://localhost/projecte/form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a>
+                <a href="./form_signup.php" class="btn btn-dark" role="button">Sign Up</button></a>
                 &nbsp;&nbsp;
-                <a href="http://localhost/projecte/form_login.php" class="btn btn-dark" role="button">Login</button></a>
+                <a href="./form_login.php" class="btn btn-dark" role="button">Login</button></a>
             </form>
 
 
@@ -68,7 +68,7 @@
         <img class="center margenArriba" src="img/icon.png" alt="iconImg" width="80" height="80">
         <h1 class="text-center">Sign Up</h1>
     </header>
-    <form class="text-center" action="http://localhost/projecte/signup.php" method="POST">
+    <form class="text-center" action="./signup.php" method="POST">
         <div class="form-group centrado">
 
             <label for="username">Username</label><br>
