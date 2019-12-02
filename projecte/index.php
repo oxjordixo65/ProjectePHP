@@ -2,7 +2,6 @@
 
 session_start();
 
-
 // quan es torna a l'index des de la pàgina de productes, com que la sessió
 // havia començat i s'havia assignat un ID, isset($_SESSION) retornarà true. 
 // Per tant, entrarà aquí i eliminarà la sessió.
